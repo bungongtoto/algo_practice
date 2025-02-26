@@ -62,6 +62,8 @@ class LinkedList {
     }
 }
 
+MediaSourceHandle.exports = {LinkedList}
+
 const testList = new LinkedList();
 testList.addToHead(1);
 testList.addToTail(3);

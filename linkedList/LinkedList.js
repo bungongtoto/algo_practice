@@ -28,7 +28,7 @@ class LinkedList {
         let newNode = new Node(data);
         let tailNode = this.head;
         if (tailNode === null) {
-            this.head = tailNode;
+            this.head = newNode;
         } else {
             while (tailNode.getNextNode() !== null) {
                 tailNode = tailNode.getNextNode();
@@ -62,14 +62,5 @@ class LinkedList {
     }
 }
 
-MediaSourceHandle.exports = {LinkedList}
 
-const testList = new LinkedList();
-testList.addToHead(1);
-testList.addToTail(3);
-testList.addToTail(4);
-testList.addToTail(5);
-testList.addToTail(6);
-testList.addToHead(2);
-testList.print()
-
+module.exports = {LinkedList}

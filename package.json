@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/bungongtoto/algo_practice/issues"
   },
-  "homepage": "https://github.com/bungongtoto/algo_practice#readme"
+  "homepage": "https://github.com/bungongtoto/algo_practice#readme",
+  "dependencies": {
+    "mocha": "^11.2.2"
+  }
 }

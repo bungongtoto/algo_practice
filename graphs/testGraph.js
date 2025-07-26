@@ -26,4 +26,6 @@ simpleGraph.addEdge(v11, v112);
 simpleGraph.addEdge(v12, v121);
 simpleGraph.addEdge(v21, v211);
 
+console.log(simpleGraph);
+
 module.exports = simpleGraph;

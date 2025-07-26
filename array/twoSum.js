@@ -19,13 +19,13 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = 1; j < nums.length; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i, j]
-            }
-        }
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
     }
+  }
 };
 
 // second solution with with time complexity of O(n)
@@ -36,19 +36,31 @@ var twoSum = function (nums, target) {
  * @return {number[]}
  */
 var twoSumBest = function (nums, target) {
-    let seen = {}
-    for (let i = 0; i < nums.length; i++) {
-        let diff = target - nums[i];
+  //   const seen = new Map();
+  //   for (let i = 0; i < nums.length; i++) {
+  //     const diff = target - nums[i];
+  //     if (seen.has(diff)) {
+  //       return [seen.get(diff), i];
+  //     }
+  //     seen.set(nums[i], i);
+  //   }
 
-        if (seen.hasOwnProperty(diff)) {
+  nums = nums.sort((a, b) => a - b);
 
-            return [seen[diff], i];
-        } else {
+  let l = 0,
+    r = nums.length - 1;
 
-            seen[nums[i]] = i;
+  while (l < r) {
+    const sum = nums[l] + nums[r];
 
-        }
+    if (sum > target) {
+      r--;
+    } else if (sum < target) {
+      l++;
+    } else {
+      return [l, r];
     }
+  }
 };
 
-console.log(twoSumBest([2, 7, 11, 15], 9))
+console.log(twoSumBest([2, 7, 11, 15], 9));
